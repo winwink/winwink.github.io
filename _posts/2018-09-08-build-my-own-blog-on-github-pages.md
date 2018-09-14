@@ -10,6 +10,9 @@ tags: [教程]
 
 准备考试写博客，记录一下平时工作和学习的感想。之前尝试在博客园写过，没有坚持下去。听说Github Pages是免费的自主博客，尝试搭建一个。
 
+## 趋势
+[静态网站生成器将会成为下一个大热门](http://www.infoq.com/cn/news/2015/11/LAMP-CDN)
+
 ## 探索
 
 先是参考 [windows安装jekyll步骤及问题](https://blog.csdn.net/mouday/article/details/79300135) 这篇文章，用了Github Pages推荐的方法，
