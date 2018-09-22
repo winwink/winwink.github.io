@@ -32,11 +32,18 @@ tags: [javascript]
 - function
 
 ### typeof
+typeof is like 'typeof()' in c#
 ``` javascript
 if (typeof v === "undefined"){
     ...
 }
 
+```
+instanceof, is like 'is' in c#
+```javascript
+'abc'[1] // 'b'
+'abc'.length // 3
+'abc' instanceof Array //false
 ```
 
 ## Values
@@ -217,3 +224,133 @@ storeData(tmp);
   storeData(tmp);
 }());
 ```
+
+### [array value](https://wangdoc.com/javascript/types/array.html)
+本质是对象，键值是自增长的数字
+清空数组的一种方式是set length = 0;
+in 运算符
+``` javascript
+var arr = [ 'a', 'b', 'c' ];
+2 in arr  // true
+'2' in arr // true
+4 in arr // false
+'a' in arr // false
+```
+遍历用for循环
+```javascript
+var a = [1, 2, 3];
+for(var i = 0; i < a.length; i++) {
+  console.log(a[i]);
+}
+```
+类似数组的对象arrayLike
+```javascript
+'abc'[1] // 'b'
+'abc'.length // 3
+'abc' instanceof Array // false
+
+var arr = Array.prototype.slice.call(arrayLike);
+```
+
+## [运算符](https://wangdoc.com/javascript/operators/arithmetic.html)
+重写valueOf和toString方法
+字符串的比较，是安装Unicode码数进行比较的
+取Unicode 
+```javascript
+"1".charCodeAt(0) // 49
+"𝌆".charCodeAt(0) // 55348
+```
+
+严格相等运算符 ==与===
+对于不同类型的比较，===直接返回false；==会将它们转换为同一类型后，再比较。
+对于Primitive Type，===比较2个值是否相等
+对于Complex Type， ===比较2个引用地址是否相同，==比较2个值是否相同
+
+~~快速取整
+```javascript
+~~2.9 // 2
+~~3 // 3
+~~-5.3 // -5
+```
+
+位运算有开关的作用，判断某个开关是否开启
+
+### [运算符转换](https://wangdoc.com/javascript/features/conversion.html)
+Number(), String(), Boolean()
+
+### [错误处理](https://wangdoc.com/javascript/features/error.html)
+Error
+- SyntaxError
+- ReferenceError, like NullReferenceException in C#
+- RangeError
+- TypeError
+- URIError
+- EvalError
+自定义Error
+```javascript
+function UserError(message) {
+  this.message = message || '默认信息';
+  this.name = 'UserError';
+}
+UserError.prototype = new Error();
+UserError.prototype.constructor = UserError;
+```
+Catch类型判断
+```javascript
+try {
+  foo.bar();
+} catch (e) {
+  if (e instanceof EvalError) {
+    console.log(e.name + ": " + e.message);
+  } else if (e instanceof RangeError) {
+    console.log(e.name + ": " + e.message);
+  }
+  // ...
+}
+```
+
+## [编程风格](https://wangdoc.com/javascript/features/style.html)
+
+### 圆括号
+- 表示函数调用时，函数名与左括号之间没有空格。
+- 表示函数定义时，函数名与左括号之间没有空格。
+- 其他情况时，前面位置的语法元素与左括号之间，都有一个空格。
+
+### switch...case建议换成对象结构
+```javascript
+function doAction(action) {
+  var actions = {
+    'hack': function () {
+      return 'hack';
+    },
+    'slash': function () {
+      return 'slash';
+    },
+    'run': function () {
+      return 'run';
+    }
+  };
+
+  if (typeof actions[action] !== 'function') {
+    throw new Error('Invalid action.');
+  }
+
+  return actions[action]();
+}
+```
+
+## [Console对象与控制台](https://wangdoc.com/javascript/features/console.html)
+console.log自带换行
+- %s 字符串
+- %d 整数
+- %i 整数
+- %f 浮点数
+- %o 对象的链接
+- %c CSS格式字符串
+```javascript
+console.log(
+  '%cThis text is styled!',
+  'color: red; background: yellow; font-size: 24px;'
+)
+```
+
