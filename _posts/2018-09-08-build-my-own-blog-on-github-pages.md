@@ -12,7 +12,8 @@ tags: [教程]
 
 ## 趋势
 [静态网站生成器将会成为下一个大热门](http://www.infoq.com/cn/news/2015/11/LAMP-CDN)
-
+[Static Web Page - Wikipedia](https://en.wikipedia.org/wiki/Static_web_page)
+[Dynamic Web Page - Wikipedia](https://en.wikipedia.org/wiki/Dynamic_web_page)
 ## 探索
 
 先是参考 [windows安装jekyll步骤及问题](https://blog.csdn.net/mouday/article/details/79300135) 这篇文章，用了Github Pages推荐的方法，
