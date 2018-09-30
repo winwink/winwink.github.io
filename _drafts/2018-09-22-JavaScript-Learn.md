@@ -8,6 +8,8 @@ tags: [javascript]
 
 参考 https://wangdoc.com/javascript/index.html
 
+[console log](https://www.cnblogs.com/moqiutao/p/7849961.html)
+
 ## [Special with C#](https://wangdoc.com/javascript/basic/grammar.html)
 - 变量名区分大小写 Case sensitive
 - 动态类型
@@ -353,4 +355,178 @@ console.log(
   'color: red; background: yellow; font-size: 24px;'
 )
 ```
+- console.log()
+- console.info()
+- console.debug()
+- console.warn() 黄色标识
+- console.error() 红色标识，带trace信息
+- console.table() 表格展示
+- console.count() 自动计数，可分类
+- console.dir() 详细信息
+- console.dirxml() DOM Tree
+- console.assert() 按条件中断执行
+- console.time(), console.timeEnd 计时
+- console.group(), console.groupEnd(), console.groupCollapsed() log分组
+- console.trace() 查看trace信息
+- console.clear() 清除console信息
 
+控制台 API
+monitorEvents(window, "resize");
+
+debugger语句设置断点
+```javascript
+for(var i = 0; i < 5; i++){
+  console.log(i);
+  if (i === 2) debugger;
+}
+```
+
+## [Object对象](https://wangdoc.com/javascript/stdlib/object.html)
+对象方法
+``` javascript
+Object.print = function (o) { console.log(o) };
+```
+实例方法
+```javascript
+Object.prototype.print = function () {
+  console.log(this);
+};
+var obj = new Object();
+obj.print()
+```
+Object.keys()
+
+自定义typeof
+```javascript
+var type = function (o){
+  var s = Object.prototype.toString.call(o);
+  return s.match(/\[object (.*?)\]/)[1].toLowerCase();
+};
+
+['Null',
+ 'Undefined',
+ 'Object',
+ 'Array',
+ 'String',
+ 'Number',
+ 'Boolean',
+ 'Function',
+ 'RegExp'
+].forEach(function (t) {
+  type['is' + t] = function (o) {
+    return type(o) === t.toLowerCase();
+  };
+});
+
+type.isObject({}) // true
+type.isNumber(NaN) // true
+type.isRegExp(/abc/) // true
+```
+
+### [属性描述对象](https://wangdoc.com/javascript/stdlib/attributes.html)
+6个属性
+```javascript
+{
+  value: 123,
+  writable: false,
+  enumerable: true,
+  configurable: false,
+  get: undefined,
+  set: undefined
+}
+```
+获取属性对象
+```javascript
+var obj = { p: 'a' };
+Object.getOwnPropertyDescriptor(obj, 'p')
+// Object { value: "a",
+//   writable: true,
+//   enumerable: true,
+//   configurable: true
+// }
+```
+Object.keys()返回可遍历的属性列表
+Object.getOwnPropertyNames()返回所有属性列表
+
+Object.defineProperty()允许通过属性描述对象，定义或修改一个属性
+getter,setter
+```javascript
+var obj ={
+  $n : 5,
+  get next() { return this.$n++ },
+  set next(n) {
+    if (n >= this.$n) this.$n = n;
+    else throw new Error('新的值必须大于当前值');
+  }
+};
+obj.next // 5
+obj.next = 10;
+obj.next // 10
+obj.next = 5;
+// Uncaught Error: 新的值必须大于当前值
+```
+防止对象被改变 Object.preventExtensions < Object.seal() < Object.freeze()
+LIFO: push, pop
+FIFO: shift, unshift
+slice(start, end)
+slice方法的一个重要应用，是将类似数组的对象转为真正的数组。
+map()类似c#的Select()
+forEach()类似c#的ForEach()
+filter()类似c#的Where()
+some()类似c#的Any()
+every()类似c#的All()
+reduce()类似c#的sum()
+
+## [包装对象](https://wangdoc.com/javascript/stdlib/wrapper.html)
+原始类型的值，可以自动当作包装对象调用，即调用包装对象的属性和方法。这时，JavaScript 引擎会自动将原始类型的值转为包装对象实例，在使用后立刻销毁实例。
+
+比如，字符串可以调用length属性，返回字符串的长度。
+```javascript
+'abc'.length // 3
+```
+abc是一个字符串，本身不是对象，不能调用length属性。JavaScript 引擎自动将其转为包装对象，在这个对象上调用length属性。调用结束后，这个临时对象就会被销毁。
+
+### [Number](https://wangdoc.com/javascript/stdlib/number.html)
+Number.MIN_VALUE：表示最小的正数(即最接近0的正数，在64位浮点数体系中为5e-324)
+Number.MAX_SAFE_INTEGER: 9007199254740991
+Number.MIN_SAFE_INTEGER: -9007199254740991
+
+### [String](https://wangdoc.com/javascript/stdlib/string.html)
+不建议使用substring()，建议使用slice()
+substr类似c#的string.SubString()
+toLowerCase()类似c#的ToLower()
+toUpperCase()类似c#的ToUpper()
+String.prototype.localeCompare()
+
+### [Math](https://wangdoc.com/javascript/stdlib/math.html)
+
+### [RegExp](https://wangdoc.com/javascript/stdlib/regexp.html)
+```javascript
+var regex = /xyz/;
+```
+### [JSON](https://wangdoc.com/javascript/stdlib/json.html)
+JSON约束
+- 复合类型的值只能是数组或对象，不能是函数、正则表达式对象、日期对象。
+- 原始类型的值只有四种：字符串、数值（必须以十进制表示）、布尔值和null（不能使用NaN, Infinity, -Infinity和undefined）。
+- 字符串必须使用双引号表示，不能使用单引号。
+- 对象的键名必须放在双引号里面。
+- 数组或对象最后一个成员的后面，不能加逗号。
+JSON.stringify(), javascript => JSON string
+JSON.parse(), JSON string => javascript
+```javascript
+JSON.stringify(false) // "false"
+JSON.stringify('false') // "\"false\""
+```
+stringify(obj, selectedProperties)可以指定需要转成字符串的属性
+
+## [实例对象与 new 命令](https://wangdoc.com/javascript/oop/new.html)
+JavaScript 语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
+```javascript
+var Vehicle = function () {
+  this.price = 1000;
+};
+var v = new Vehicle();
+v.price // 1000
+```
+### [this关键字](https://wangdoc.com/javascript/oop/this.html)
+call, apply, bind
