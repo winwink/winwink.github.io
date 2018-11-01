@@ -10,6 +10,10 @@ tags: [javascript]
 
 [console log](https://www.cnblogs.com/moqiutao/p/7849961.html)
 
+## Link of wangdoc
+- https://wangdoc.com/javascript/events/eventtarget.html 参见后文《事件的传播》部分,详见《Event 对象》章节
+
+
 ## [Special with C#](https://wangdoc.com/javascript/basic/grammar.html)
 - 变量名区分大小写 Case sensitive
 - 动态类型
@@ -466,6 +470,8 @@ obj.next = 5;
 // Uncaught Error: 新的值必须大于当前值
 ```
 防止对象被改变 Object.preventExtensions < Object.seal() < Object.freeze()
+
+### [Array对象](https://wangdoc.com/javascript/stdlib/array.html)
 LIFO: push, pop
 FIFO: shift, unshift
 slice(start, end)
@@ -530,3 +536,89 @@ v.price // 1000
 ```
 ### [this关键字](https://wangdoc.com/javascript/oop/this.html)
 call, apply, bind
+
+### [对象的继承](https://wangdoc.com/javascript/oop/prototype.html)
+```javascript
+var MyArray = function () {};
+
+MyArray.prototype = new Array();
+MyArray.prototype.constructor = MyArray;
+
+var mine = new MyArray();
+mine.push(1, 2, 3);
+mine.length // 3
+mine instanceof Array // true
+```
+
+### [异步](https://wangdoc.com/javascript/async/index.html)
+定时器和Promise
+
+### [DOM](https://wangdoc.com/javascript/dom/general.html)
+
+### [操作CSS](https://wangdoc.com/javascript/dom/css.html)
+
+### [浏览器模型](https://wangdoc.com/javascript/bom/engine.html)
+application/javascript为新的标准
+```javascript
+<script charset="utf-8" src="https://www.example.com/script.js" integrity="sha256-TvVUHzSfftWg1rcfL6TIJ0XKEGrgLyEq6lEpcmrG9qs="></script>
+```
+URL支持`javascript:`协议, href和浏览器
+
+如果 JavaScript 代码返回一个字符串，浏览器就会新建一个文档，展示这个字符串的内容，原有文档的内容都会消失。
+
+DOMContentLoaded事件，表示DOM加载完后
+```javascript
+<head>
+  <script>
+    document.addEventListener(
+      'DOMContentLoaded',
+      function (event) {
+        console.log(document.body.innerHTML);
+      }
+    );
+  </script>
+</head>
+```
+
+#### 加载顺序
+1. 浏览器一边下载 HTML 网页，一边开始解析。也就是说，不等到下载完，就开始解析。
+2. 解析过程中，浏览器发现script元素，就暂停解析，把网页渲染的控制权转交给 JavaScript 引擎。
+3. 如果script元素引用了外部脚本，就下载该脚本再执行，否则就直接执行代码。
+4. JavaScript 引擎执行完毕，控制权交还渲染引擎，恢复往下解析 HTML 网页。
+
+#### 特点
+- 让script放在底部，可以等DOM加载完再执行
+- 多个script脚本时，是按出现的先后顺序执行
+- 对同一个域名，同时下载的脚本数目有限，数目为6~20个
+- defer不会阻塞页面，会在DOM加载完后再执行
+- async不会阻塞页面，会在下载完后执行，无法保证执行顺序
+
+### [XMLHttpRequest对象](https://wangdoc.com/javascript/bom/xmlhttprequest.html)
+
+### [CORS 同源限制](https://wangdoc.com/javascript/bom/same-origin.html)
+
+### [JSONP,WebSocket,CORS](https://wangdoc.com/javascript/bom/same-origin.html)
+
+### [Storage](https://wangdoc.com/javascript/bom/storage.html)
+cookie 4KB
+Storage: Chrome 2.5MB, FireFox & Opera 5MB, IE 10MB
+
+### [Form](https://wangdoc.com/javascript/bom/form.html)
+
+### [IndexDB](https://wangdoc.com/javascript/bom/indexeddb.html)
+特点：
+- 键值对存储
+- 异步
+- 支持事务
+- 同源限制
+- 存储空间大， >=250MB
+- 支持二进制存储
+接口
+- IDBDataBase
+- IDBObjectStore
+- IDBIndex
+- IDBTransaction
+- IDBCursor
+- IDBKeyRange
+
+### [Web Worker](https://wangdoc.com/javascript/bom/webworker.html#navbar)

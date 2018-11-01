@@ -26,7 +26,7 @@ tags: [javascript]
 ```
 <script type="text/javascript" src="jquery.1-10-2.js?v=2"></script> 
 ```
-- 前端打包方式
+- 前端打包方式。修改引用的文件名称
 
 200, 200(from memory cache), 200 (from disk cache), 
 304, 304(from memory cache)
