@@ -1,7 +1,7 @@
 ---
 layout: post2
 title: ASP.NET WebAPI Tutorial 01 Web API是什么
-description: ASP.NET WebAPI路由规则
+description: ASP.NET WebAPI简介
 keywords: ASP.NET WebAPI
 tags: [ASP.NET]
 ---

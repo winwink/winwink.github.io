@@ -1,7 +1,7 @@
 ---
 layout: post2
 title: ASP.NET WebAPI Tutorial 06 返回类型
-description: ASP.NET WebAPI路由规则
+description: ASP.NET WebAPI返回类型
 keywords: ASP.NET WebAPI
 tags: [ASP.NET]
 ---

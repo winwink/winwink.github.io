@@ -1,7 +1,7 @@
 ---
 layout: post2
 title: ASP.NET WebAPI Tutorial 08 数据类型格式化器
-description: ASP.NET WebAPI路由规则
+description: ASP.NET WebAPI序列化和反序列化
 keywords: ASP.NET WebAPI
 tags: [ASP.NET]
 ---

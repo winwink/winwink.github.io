@@ -239,8 +239,19 @@ namespace HttpClientDemo
 |方法名字|描述|
 |---|---|
 |GetAsync|异步发送 Get 请求|
-|GetByteArrayAsync
+|GetByteArrayAsync|异步发送 Get 请求,返回 byte[]|
+|GetStreamAsync|异步发送 Get 请求, 返回 Stream|
+|GetStringAsync|异步发送 Get 请求, 返回字符串|
+|PostAsync|异步发送 Post 请求|
+|PostAsJsonAsync|异步发送 Post 请求, 发送的参数以 json 格式|
+|PostAsXmlAsync|异步发送 Post 请求, 发送的参数以 XML 格式|
+|PutAsync|异步发送 Put 请求|
+|PutAsJsonAsync|异步发送 Put 请求, 发送的参数以 Json 格式|
+|PutAsXmlAsync|异步发送 Put 请求, 发送的参数以 Xml 格式|
+|DeleteAsync|异步发送 Delete 请求|
+参考 MSDN [HttpClient](<https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(v=vs.118).aspx>), [HttpClientExtension](<https://msdn.microsoft.com/en-us/library/system.net.http.httpclientextensions(v=vs.118).aspx>)
 
 ### 参考
 
+[.net core 使用 HttpClientFactory 代替 HttpClient](https://www.cnblogs.com/wzk153/p/10945313.html)
 https://code-maze.com/different-ways-consume-restful-api-csharp/

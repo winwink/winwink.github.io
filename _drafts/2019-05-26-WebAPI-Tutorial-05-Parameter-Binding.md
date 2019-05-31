@@ -1,7 +1,7 @@
 ---
 layout: post2
 title: ASP.NET WebAPI Tutorial 05 参数绑定
-description: ASP.NET WebAPI路由规则
+description: ASP.NET WebAPI参数绑定
 keywords: ASP.NET WebAPI
 tags: [ASP.NET]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post2
-title: ASP.NET WebAPI Tutorial 02 创建Web API项目
-description: ASP.NET WebAPI路由规则
+title: ASP.NET WebAPI Tutorial 02 Web API控制器
+description: ASP.NET WebAPI控制器
 keywords: ASP.NET WebAPI
 tags: [ASP.NET]
 ---

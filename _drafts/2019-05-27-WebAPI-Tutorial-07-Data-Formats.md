@@ -1,7 +1,7 @@
 ---
 layout: post2
 title: ASP.NET WebAPI Tutorial 07 数据格式
-description: ASP.NET WebAPI路由规则
+description: ASP.NET WebAPI数据格式
 keywords: ASP.NET WebAPI
 tags: [ASP.NET]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post2
 title: ASP.NET WebAPI Tutorial 03 配置Web API
-description: ASP.NET WebAPI路由规则
+description: ASP.NET WebAPI配置
 keywords: ASP.NET WebAPI
 tags: [ASP.NET]
 ---
