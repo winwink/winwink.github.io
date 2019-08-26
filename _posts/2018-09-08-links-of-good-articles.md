@@ -13,7 +13,9 @@ tags: [articles]
 - [JavaScript Prototype 2018-08-26](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes)
 - [learn git 2018-09-07](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 - [静态网站及其生成、托管会成为一种流行趋势吗？](https://www.cnblogs.com/redmoon/p/5061738.html)
-
+- []()
+- [.NET的前世今生与将来](https://www.cnblogs.com/unruledboy/p/net_past_present_future.html)
+- [JavaScript原型链](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes)
 ### Non-technical
 - [Don't give up any teammates easily 2018-07-23](https://mp.weixin.qq.com/s/k0j8LkV7XVZflYIXJm5zYg)
 - [Feedback in work 2018-08-21](https://mp.weixin.qq.com/s/RaVwmLYTgBfByyR_R065Hw)

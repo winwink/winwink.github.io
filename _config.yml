@@ -1,15 +1,15 @@
-﻿title: "朱高攀的技术博客"
-subtitle: "我是一个靠谱的程序员, 目前关注 MonoTouch、 Mono for Android、 Silverlight、  ASP.NET MVC 以及 NHibernate。"
-public_url: "https://winwink.github.io"
-keywords: "mono, ios, android, silverlight, asp.net mvc, asp.net web api, nhibernate, c, sql server, xml, linux, mac osx"
+﻿title: '朱高攀的技术博客'
+subtitle: ''
+public_url: 'https://winwink.github.io'
+keywords: ''
 owner:
-  name: "朱高攀"
-  mail: "winwink(at)qq.com"
-  weibo: "https://weibo.com/winwink"
+  name: '朱高攀'
+  mail: 'winwink(at)qq.com'
+  weibo: 'https://weibo.com/winwink'
 disqus:
-  short_name: "winwink-github"
+  short_name: 'winwink-github'
 paginate: 12
-exclude: ["start-jekyll.sh", "start-jekyll.bat", "bower.json"]
+exclude: ['start-jekyll.sh', 'start-jekyll.bat', 'bower.json']
 encoding: utf-8
 markdown: kramdown
 highlighter: rouge
